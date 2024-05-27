@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wake-Up Call Service</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header-container">
+        <div class="image-title">
+            <h1 class="title">Hotel Vanity</h1>
+        </div>
+        <div class="nav-container">
+            <div class="nav-holder">
+                <nav class="navbar navbar-expand-md avbar">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="bookings.html"><i class="fas fa-book"></i> Bookings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active-link" href="services.html"><i class="fas fa-concierge-bell"></i> Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-envelope"></i> Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="sign_in_form.html"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Wake-Up Call Service</h2>
+        <form action="submit_wake_up_call.php" method="post" class="needs-validation" novalidate>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+                <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="form-group">
+                <label for="room_number">Room Number</label>
+                <input type="text" class="form-control" id="room_number" name="room_number" placeholder="Enter your room number" required>
+                <div class="invalid-feedback">Please enter your room number.</div>
+            </div>
+            <div class="form-group">
+                <label for="wake_up_time">Desired Wake-Up Time</label>
+                <input type="time" class="form-control" id="wake_up_time" name="wake_up_time" required>
+                <div class="invalid-feedback">Please specify the wake-up time.</div>
+            </div>
+            <div class="form-group">
+                <label for="comments">Additional Comments</label>
+                <textarea class="form-control" id="comments" name="comments" rows="4" placeholder="Any additional instructions or comments"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Request Wake-Up Call</button>
+        </form>
+    </div>
+
+    <footer class="footer text-center mt-4">
+        <div class="container">
+            <ul class="social-icons">
+                <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+</html>

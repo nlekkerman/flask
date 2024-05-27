@@ -1,0 +1,1402 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lilita+One&family=Oswald:wght@200;300;400;500;600;700&family=Pirata+One&family=Roboto&family=Rowdies:wght@300;400;700&family=Squada+One&family=Vina+Sans&display=swap');
+
+
+/*
+
+<a href="https://www.freepik.com/free-photo/rock-band-silhouettes-stage-concert_1191530.htm#fromView=search&page=1&position=9&uuid=e477b959-0d44-4b47-a197-36f596eb2b32">Image by photoangel on Freepik</a>
+
+
+<a href="https://www.freepik.com/free-photo/brown-gift-with-dark-red-tie_994986.htm#fromView=search&page=1&position=12&uuid=f746cf58-03dc-414f-a206-35c92ca8653f">Image by freepik</a>*/
+.nav-container {
+    position: -webkit-sticky;
+    /* For Safari */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    /* Ensures it stays on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    /* Ensure it spans the entire width */
+    background-color: rgb(1, 38, 41);
+    animation: slideInFromLeft 1.5s ease-in-out;
+    /* Example background color */
+    padding-bottom: 5px;
+    border-bottom: 1px solid silver;
+}
+
+#services-nav {
+    display: none;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.review-item {
+    display: none;
+
+
+}
+
+.review-item.active {
+    display: block;
+
+    /* Display active review item */
+}
+
+.item-content-review {
+
+    background-color: rgb(255, 255, 255);
+    color: white;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+
+}
+
+.review-body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    animation: fadeIn 2s ease-in-out;
+    padding: 10px;
+    margin: 0px;
+
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.review-promo-section {
+    border-top: 30px solid rgb(0, 57, 4);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+
+
+}
+
+.review-promo-section.slide-in {
+    animation: zoomIn 1s forwards;
+}
+
+.promo-container {
+    width: 100%;
+    padding: 20px;
+    background-image: url('promo-background.jpg');
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: row !important;
+    background-color: darkblue;
+}
+.book-room-card{
+    margin-bottom: 10px;
+}
+.blue-section-first-container,.blue-section-second-container{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    align-self: center;
+
+
+}
+#main-container {
+    min-height: 100vh;
+    align-items: center;
+    display: flex;
+    margin: 0 !important;
+    min-width: 100% !important;
+
+}
+
+.style-book-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100% !important;
+    padding: 10px;
+    margin: 0 !important;
+
+    
+
+
+
+}
+
+.background-image-book-room {
+    width: 100% !important;
+    padding: 20px;
+    background-image: url('with-view.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: row !important;
+    background-color: darkblue;
+}
+
+.book-room-title {
+    color: #000604 !important;
+}
+
+.room-card {
+    transition: transform 0.2s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 3px solid silver;
+
+}
+
+.room-card:hover {
+    transform: scale(1.05);
+}
+
+.booking-btn {
+    transition: background-color 0.8s ease-in-out;
+}
+
+.booking-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.group h3 {
+    background-color: rgb(1, 38, 41);
+}
+
+.promo-div {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    flex: 1;
+    left: 1%;
+    background: url('promo-background.jpg') center / cover no-repeat;
+
+    align-items: center;
+    background-color: rgba(238, 255, 240, 0.3);
+}
+
+.test-promo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    opacity: 0;
+    /* Ensure element is initially hidden */
+    transform: scale(0);
+    /* Initial scale */
+    transition: transform 1s, opacity 0.5s;
+    /* Smooth transition */
+    padding-top: 30px;
+    background-color: #b30000;
+}
+
+.test-promo-container.zoom-in {
+    animation: zoomIn 1s forwards;
+    /* Apply the zoomIn animation */
+}
+
+.promo-item {
+    margin: 10px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-right: 1px solid silver;
+    border-radius: 5px;
+    flex: 1;
+    justify-content: space-between;
+    margin: 2px;
+}
+
+.promo-item h2 {
+    background-color: #0056b3;
+    font-size: 1.4em;
+}
+
+.promo-item p {
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    display: flex;
+    flex: 1;
+}
+
+#qrcode {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.visit-button {
+    color: white;
+    padding: 8px;
+    border-radius: 25px;
+    margin-top: 20px;
+    border: 2px solid silver;
+    background-color: rgba(0, 0, 0, 0.5);
+
+
+}
+
+.spacer {
+    color: #000604;
+}
+
+.animate__animated {
+    opacity: 1;
+    /* Reveal the element when animated */
+}
+
+.review {
+    padding: 15px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+    color: white;
+        animation: zoomIn 1s ease-in;
+
+}
+
+.review-body {
+    font-size: 1em;
+    margin: 10px 0;
+
+}
+
+.review-author {
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
+.review-date {
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+.stars {
+    color: gold;
+    font-size: 1.2em;
+}
+
+#main-title {
+    font-size: 3rem;
+    color: white;
+    position: relative;
+
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.main-content-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    background-image: url('lobby.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+}
+
+
+.main-content-background img {
+    width: 100%;
+
+
+}
+
+/* Add more CSS styling as needed */
+
+.navbar-toggler-icon {
+    /* Hide the default icon */
+    background-image: none;
+    width: 1.5em;
+    /* Set width */
+    height: 2px;
+    /* Set height */
+    background-color: silver;
+    /* Set background color for the line */
+    position: relative;
+    padding: 1px;
+    align-self: center;
+    border-radius: 4px;
+    /* Add border radius for rounded corners */
+}
+
+.asasa {
+    border: 2px solid silver;
+    border-radius: 5px;
+
+
+}
+
+/* Create the lines for the hamburger icon */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    /* Inherit the background color */
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+    /* Add transition effect */
+}
+
+/* Position the lines for the hamburger icon */
+.navbar-toggler-icon::before {
+    top: -6px;
+}
+
+.navbar-toggler-icon::after {
+    bottom: -6px;
+}
+
+/* Add hover effect */
+.navbar-toggler-icon:hover::before,
+.navbar-toggler-icon:hover::after {
+    transform: scale(1.1);
+    /* Scale the lines on hover */
+}
+
+
+
+.avbar {
+    /* Add styles for the navbar */
+    display: flex;
+    /* Ensure it behaves as a flex container */
+    justify-content: flex-end;
+    /* Align items to the right */
+    list-style: none;
+    /* Remove default list styles */
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+}
+
+.new-position {
+    top: 10px;
+    left: 10px;
+    transform: none;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.bookings-body {
+    animation: slideInFromBottom 0.8s ease-in-out;
+    min-width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+
+}
+.zoomIn{
+    animation: zoomIn 1.2s ease-in;
+
+
+}
+
+.sign_in_form_body {
+    animation: slideInFromBottom 0.8s ease-in-out;
+    background-image: url('fancy-restaurant.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100%;
+    height: 100vh;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    color: #000604;
+    justify-content: center;
+
+
+}
+
+.sign-in-form-additional-styles{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.navbar-nav {
+    /* Add styles for the navbar */
+    width: 100%;
+    display: flex;
+    /* Ensure it behaves as a flex container */
+    justify-content: flex-end;
+    /* Align items to the right */
+    list-style: none;
+    /* Remove default list styles */
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+    /* Remove default padding */
+    margin-right: 20px;
+}
+
+
+.avbar .nav-item {
+    /* Add styles for each navigation item */
+    margin-left: 10px;
+    /* Example margin between items */
+}
+
+.avbar .nav-link {
+
+    color: silver;
+
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transition for hover effect */
+
+}
+
+
+
+.active-link {
+    border-left: 2px solid silver;
+    border-right: 2px solid silver;
+    background-color: #000604;
+    font-size: 1.1rem;
+    animation: zoomIn 1.8s ease-in;
+}
+
+.nav-link i {
+    margin-right: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect for nav links */
+.nav-link:hover {
+    background-color: silver;
+    /* Background color on hover */
+    color: black;
+    /* Text color on hover */
+}
+
+/* Hover effect for icons */
+.nav-link:hover i {
+    color: black;
+    /* Icon color on hover */
+}
+
+.header-image {
+    position: relative;
+    border: 4px solid silver;
+    bottom: -150px;
+    width: 100%;
+    left: 50px;
+
+
+
+}
+
+.header-container {
+    border-bottom: 4px solid silver;
+    animation: slideInFromTop 0.6s ease-in-out;
+
+
+}
+
+
+
+.activity p {
+    font-size: 1.5rem;
+    padding: 5px;
+    font-weight: 500;
+    border-bottom: 4px solid silver;
+
+}
+
+.activity img {
+    width: 100%;
+}
+
+.promotion p {
+    font-size: 1.5rem;
+    padding: 5px;
+    font-weight: 500;
+    border-bottom: 4px solid silver;
+}
+
+.promotion img {
+    width: 100%;
+}
+
+.promotion {
+    background-color: rgba(248, 218, 218, 0.4);
+
+}
+
+.service-card {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.service-card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-icon {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: silver !important;
+}
+
+.service_title {
+    color: silver;
+    margin-top: 70px;
+    animation: slideInFromRight 0.8s ease-in-out;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: silver;
+}
+
+.card-text {
+    font-size: 1em;
+    color: silver;
+}
+
+#main {
+    background-image: url('fancy-restaurant.jpg');
+    background-size: cover;
+    /* Ensures the image covers the whole element */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    min-height: 100vh;
+
+}
+
+main {
+    z-index: 10;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.main-content {
+    display: flex;
+
+    height: 100%;
+
+
+}
+
+#main-content {
+    animation: slideInFromBottom 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    color: #fff;
+    flex: 1;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+
+    justify-content: center;
+
+
+
+}
+
+
+.banner-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.banner {
+    background-color: rgba(255, 187, 0, 0.3);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 1px;
+    width: 90%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sun {
+    color: goldenrod;
+    font-size: 3em;
+}
+
+.banner a {
+    color: rgb(105, 105, 216);
+    text-decoration: underline;
+}
+
+.banner a:hover {
+    color: darkblue;
+}
+
+.list-item {
+    display: none;
+    /* Initially hide all list items */
+
+
+}
+
+.list-item.active {
+    display: block;
+    /* Display active list item */
+}
+
+.item-content img {
+    width: 100%;
+
+}
+
+.item-content {
+    color: white;
+
+}
+
+.item-content p {
+
+    background-color: #ffffff;
+    margin-bottom: 0;
+    margin-top: 0;
+    color: black;
+    font-size: 1.3rem;
+    padding: 10px;
+}
+
+.list-group {
+    border-radius: 0px !important
+}
+
+.item-content h3 {
+    border-top: 1px solid silver;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    background-color: #b30000;
+    margin-bottom: 0;
+
+}
+
+#slideshow {
+
+    animation: slideInFromRight 0.8s ease-in-out;
+    box-shadow: 2px 2px 5px rgba(254, 254, 254, 0.2);
+
+    border-bottom: 5px solid silver;
+
+
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    flex-shrink: 0;
+}
+
+.footer .social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .social-icons li {
+    margin: 0 10px;
+}
+
+.footer .social-icons li a {
+    color: #343a40;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.table_title {
+    color: white !important;
+    width: 100% !important;
+    text-align: center;
+
+}
+
+.bookings_title {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 50px 20px;
+    border-bottom: 2px solid silver;
+
+}
+
+.bookings_title i {
+    color: silver;
+    font-size: 1rem;
+    margin-left: 30px;
+    margin-right: 30px;
+    /* Adjust this size as needed */
+    animation: zoomIn 1.5s ease-in;
+
+}
+
+.modal-content{
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-53%, 20%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.restaurant_title {
+    color: silver;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
+    align-items: center;
+    animation: slideInFromTop 3.6s ease-in-out;
+
+
+}
+
+.bookings_title {
+    animation: slideInFromTop 1.6s ease-in-out;
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 100px;
+}
+
+
+.group {
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0px;
+}
+
+.booking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    width: 100px;
+
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 5px;
+    color: #fff;
+    animation: zoomIn 1s ease-in;
+    margin: 20px;
+}
+
+.booking:hover {
+    transform: scale(1.30);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.booking div {
+    margin-bottom: 10px;
+}
+
+.booking p {
+    position: absolute;
+    bottom: 5px;
+    margin: 0;
+    font-size: 14px;
+}
+
+.circle-small,
+.square-small,
+.circle-big,
+.parallelepiped {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: green;
+
+}
+
+.circle-small {
+    border-radius: 50%;
+}
+
+.square-small {
+    background-color: green;
+}
+
+.circle-big {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.parallelepiped {
+    width: 70px;
+    height: 40px;
+}
+
+/* Service card styles */
+.service-card {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.promo-container-title {
+
+    font-weight: 700;
+    font-size: 1.5rem;
+
+
+
+}
+
+.hero-text {
+    background-color: rgba(234, 234, 234, 0.8);
+    color: #000604;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin: 0;
+    font-family: 'Squada', Arial, Helvetica, sans-serif;
+    animation: slideInFromLeft 0.8s ease-in-out;
+    font-size: 3rem;
+}
+
+.slideshow-with-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 70px;
+    background-color: rgb(255, 255, 255);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #0056b3;
+}
+
+.offers-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.test-div {
+    padding: 20px;
+    display: flex;
+    flex: 1;
+    right: 1%;
+    background: url('show-img.jpg') center / cover no-repeat;
+
+    /* Initially hide the element */
+    transition: opacity 1s ease;
+    /* Smooth transition for opacity */
+    align-items: center;
+    background-color: #f9f6f6;
+    color: #00563a;
+
+}
+
+/**Flaoting chat**/
+.floating-chat-container {
+    position: fixed;
+    bottom: 20px; /* distance from the bottom of the viewport */
+    right: 20px;  /* distance from the right of the viewport */
+}
+.dropdown-menu{
+    background-color: #00563a;
+    padding: 0 !important;
+
+}
+.dropdown-item{
+    background-color: #002a1c;
+    margin:0 !important;
+    color: silver !important;
+    height: 100%;
+    padding: 0 !important;
+}
+.floating-chat {
+    background-color: #b30021;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+}
+
+.floating-chat i {
+    margin-right: 8px;
+}
+
+label {
+    color: #f8f9fa;
+}
+
+.text-center {
+    color: white;
+}
+
+.promo-container-title {
+    padding: 20px;
+    display: flex;
+    flex: 1;
+    right: 1%;
+    width: 50%;
+    align-items: center;
+    background-color: rgba(147, 59, 59, 0.4);
+    border-radius: 30px;
+
+}
+
+.test-promo-container.animate {
+    opacity: 1;
+    /* Show the element with animation */
+}
+
+.text-container {
+    width: 150px;
+    height: 350px;
+    border-right: 1px solid silver;
+    background-color: rgba(234, 234, 234, 0.3);
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+
+}
+
+.main-text-windows {
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    /* Optional: Adds padding to ensure text doesn't touch the container edges */
+    color: white;
+    border-radius: 25px;
+    /* Optional: Ensures text color contrasts with background */
+}
+
+.text-container p {
+    margin: 0;
+    color: black;
+    border-radius: 25px;
+
+
+}
+
+.text-container i {
+    font-size: 24px;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #ccc;
+    width: 100%;
+    border-radius: 25px;
+
+
+}
+
+
+
+.text-container {
+
+    overflow: hidden;
+}
+
+.text-container p {
+
+    top: 0;
+    left: 0;
+    opacity: 1;
+    /* Initially visible */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Apply transitions for opacity and transform */
+}
+
+.text-container:hover p {
+    opacity: 0;
+    /* Hide the original text */
+    transform: translateY(-100%);
+    /* Slide out the <p> upwards */
+}
+
+.text-container p.new-text-on-hover {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    background-color: rgba(5, 225, 100, 0.2);
+    padding: 10px;
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(100%);
+    /* Initially slide in the new text from bottom */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Apply transitions for opacity and transform */
+}
+
+.text-container:hover p.new-text-on-hover {
+    opacity: 1;
+    /* Show the new text */
+    transform: translateY(0);
+    /* Slide in the new text */
+}
+
+
+.text-container i::before {
+
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.animate-services {
+    animation: zoomIn 0.8s ease-in;
+}
+
+.main-content-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.slide-holder {
+    height: 400px;
+    display: flex;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    animation: zoomIn 0.9s ease-in-out;
+
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    max-width: 800px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(255, 246, 246, 0.5);
+    animation: zoomIn 1s ease-in;
+
+
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    transition: left 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.slide img {
+    margin-bottom: 20px;
+    height: auto;
+}
+
+.title {
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    padding: 10px 0;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.action-button {
+    position: absolute;
+    bottom: 10px;
+    padding: 5px 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #b30000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+#logo{
+   width: 60px; 
+   border-radius: 50%;
+   border: 3px solid silver ;
+}
+
+.logo-container{
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    text-align: center;
+    background-color: rgba(1, 38, 41,0.7);
+    padding: 20px 10px 0px 10px;
+    color: white;
+    font-family: Oswald;
+    font-weight: 800;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-top: 5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+
+}
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    height: 150px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    font-family: Oswald;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-window {
+    position: fixed;
+    bottom: 80px; /* Adjust according to floating chat button position */
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: none; /* Initially hidden */
+    flex-direction: column;
+}
+
+.chat-header {
+    background-color: #b30000;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-footer {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chat-footer input {
+    width: calc(100% - 60px);
+    padding: 5px;
+}
+
+.chat-footer button {
+    width: 50px;
+    background-color: #b30000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Define the keyframes for the zoom-in animation */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0);
+        /* Initial transparent background color */
+
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+
+    }
+}
+
+@media (min-width: 770px){
+
+    .slide-holder{
+        margin-top: 150px;
+    }
+    /* LOGO */
+
+    .logo-container{
+        margin-top: 20px;
+    }
+    #logo{
+        width: 120px;
+        height: 120px;
+        background: #000604;
+    }
+    .circle-small {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .square-small {
+        background-color: green;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .circle-big {
+        border-radius: 50%;
+        width: 100px;
+        height: 70px;
+    }
+    
+    .parallelepiped {
+        width: 70px;
+        height: 40px;
+    }
+}

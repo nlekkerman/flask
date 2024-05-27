@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Diner</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="header-container">
+
+
+   
+    <div class="nav-container">
+      <div class="nav-holder">
+          <nav class="navbar navbar-expand-md avbar">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle active-link" href="#" id="bookingsDropdown" role="button"
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fas fa-book"></i> Bookings
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="bookingsDropdown">
+                              <a class="dropdown-item" href="book-restaurant.html">Book Restaurant</a>
+                              <a class="dropdown-item" href="book-room.html">Book Room</a>
+                          </div>
+                      </li>
+                      <li class="nav-item" id="services-nav">
+                          <a class="nav-link" href="services.html"><i class="fas fa-concierge-bell"></i> Services</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#"><i class="fas fa-envelope"></i> Contact</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="sign_in_form.html"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+      </div>
+  </div>
+
+  </header>
+  <div id="main">
+  <div class="bookings_title">
+    <h2> <i class="fas fa-utensils"></i><span class="restaurant_title"> Restaurant</span><i class="fas fa-utensils"></i>
+    </h2>
+
+  </div>
+  <div class="container mt-5 bookings-body">
+    <!-- Group 1 -->
+    <div class="group">
+      <h3 class="table_title">AURORA SECTION</h3>
+      <div class="row blue-section-first-container">
+        <div class="booking" onclick="openForm(1)">
+          <div class="circle-small">1</div>
+          <p>2 Persons</p>
+        </div>
+        <div class="booking" onclick="openForm(2)">
+          <div class="square-small">2</div>
+          <p>4 Persons</p>
+        </div>
+        <div class="booking" onclick="openForm(4)">
+          <div class="square-small">3</div>
+          <p>4 Persons</p>
+        </div>
+      </div>
+      <div class="row blue-section-second-container">
+        <div class="booking" onclick="openForm(3)">
+          <div class="circle-big">4</div>
+          <p>6 Persons</p>
+        </div>
+        <div class="booking" onclick="openForm(5)">
+          <div class="circle-big">5</div>
+          <p>6 Persons</p>
+        </div>
+        <div class="booking" onclick="openForm(6)">
+          <div class="parallelepiped">6</div>
+          <p>8 Persons</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repeat the structure for other groups -->
+
+    <!-- Group 2 -->
+    <div class="group">
+      <h3 class="table_title">SUB SECTION</h3>
+      <div class="row blue-section-first-container">
+        <div class="booking" onclick="openForm(7)">
+          <div class="circle-small">7</div>
+          <p>2 Persons</p>
+        </div>
+        <div class="booking" onclick="openForm(8)">
+          <div class="square-small">8</div>
+          <p>4 Persons</p>
+        </div>
+        <div class="booking" onclick="openForm(9)">
+          <div class="circle-big">9</div>
+          <p>6 Persons</p>
+        </div>
+      </div>
+      <div class="row blue-section-first-container">
+        <div class="booking" onclick="openForm(10)">
+          <div class="square-small">10</div>
+          <p>4 Persons</p>
+        </div>
+        <div class="booking" onclick="openForm(11)">
+          <div class="circle-big">11</div>
+          <p>6 Persons</p>
+        </div>
+        <div class="booking" onclick="openForm(12)">
+          <div class="parallelepiped">12</div>
+          <p>8 Persons</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reservation Form Modal -->
+  <div class="modal" id="reservationModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Reservation Form</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="reservationForm">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone:</label>
+              <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="date">Date:</label>
+              <input type="date" class="form-control" id="date" required>
+            </div>
+            <div class="form-group">
+              <label for="time">Time:</label>
+              <input type="time" class="form-control" id="time" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reservation Success Modal -->
+  <div class="modal" id="successModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Reservation Successful</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" id="reservationDetails">
+          <!-- Reservation details will be displayed here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reservation Form Modal -->
+  <div class="modal" id="reservationModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Reservation Form</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="reservationForm">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone:</label>
+              <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="date">Date:</label>
+              <input type="date" class="form-control" id="date" required>
+            </div>
+            <div class="form-group">
+              <label for="time">Time:</label>
+              <input type="time" class="form-control" id="time" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reservation Success Modal -->
+  <div class="modal" id="successModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Reservation Successful</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" id="reservationDetails">
+          <!-- Reservation details will be displayed here -->
+        </div>
+      </div>
+    </div>
+  </div></div>
+  <footer class="footer text-center mt-4">
+    <div class="container">
+      <ul class="social-icons">
+        <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+  <script>
+
+    function openForm(tableNumber) {
+      $('#reservationModal').modal('show');
+      $('#reservationForm').attr('data-table-number', tableNumber);
+    }
+
+    $('#reservationForm').on('submit', function (event) {
+      event.preventDefault();
+      var name = $('#name').val();
+      var email = $('#email').val();
+      var phone = $('#phone').val();
+      var date = $('#date').val();
+      var time = $('#time').val();
+      var tableNumber = $(this).attr('data-table-number');
+
+      var reservationDetails = `
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Date:</strong> ${date}</p>
+      <p><strong>Time:</strong> ${time}</p>
+      <p><strong>Table Number:</strong> ${tableNumber}</p>
+    `;
+      $('#reservationDetails').html(reservationDetails);
+      $('#reservationModal').modal('hide');
+      $('#successModal').modal('show');
+      $(this)[0].reset();
+    });
+  </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script

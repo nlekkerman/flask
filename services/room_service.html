@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room Service</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header-container">
+    <div class="image-title">
+      <h1 class="title">Hotel Vanity</h1>
+    </div>
+    <div class="nav-container">
+      <div class="nav-holder">
+        <nav class="navbar navbar-expand-md avbar">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="bookings.html">Bookings</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sign_in_form.html">Sign In</a>
+              </li>
+            </ul>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mt-5 va">
+    <h2 class="text-center mb-4">Room Service Menu</h2>
+    <form id="roomServiceForm">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card service-card">
+            <img src="lobby.jpg" class="card-img-top" alt="Starters">
+            <div class="card-body">
+              <h3 class="card-title">Starters</h3>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Salad" id="starter1">
+                <label class="form-check-label" for="starter1">Salad</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Soup" id="starter2">
+                <label class="form-check-label" for="starter2">Soup</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Bruschetta" id="starter3">
+                <label class="form-check-label" for="starter3">Bruschetta</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card">
+            <img src="lobby.jpg" class="card-img-top" alt="Main Courses">
+            <div class="card-body">
+              <h3 class="card-title">Main Courses</h3>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Steak" id="main1">
+                <label class="form-check-label" for="main1">Steak</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Pasta" id="main2">
+                <label class="form-check-label" for="main2">Pasta</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Fish" id="main3">
+                <label class="form-check-label" for="main3">Fish</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card service-card">
+            <img src="lobby.jpg" class="card-img-top" alt="Desserts">
+            <div class="card-body">
+              <h3 class="card-title">Desserts</h3>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Ice Cream" id="dessert1">
+                <label class="form-check-label" for="dessert1">Ice Cream</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Cake" id="dessert2">
+                <label class="form-check-label" for="dessert2">Cake</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Fruit Salad" id="dessert3">
+                <label class="form-check-label" for="dessert3">Fruit Salad</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group mt-4">
+        <label for="specialRequests">Special Requirements</label>
+        <textarea class="form-control" id="specialRequests" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Submit Order</button>
+    </form>
+  </main>
+
+  <footer class="footer text-center mt-4">
+    <div class="container">
+      <ul class="social-icons">
+        <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
